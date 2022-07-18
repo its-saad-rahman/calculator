@@ -4,7 +4,15 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
+      defer
+    ></script>
     <script src="main.js" defer></script>
     <title>Calculator</title>
   </head>
@@ -16,25 +24,25 @@
       </div>
       <div class="keys">
         <div class="number-keys">
-          <button>7</button>
-          <button>8</button>
-          <button>9</button>
-          <button>4</button>
-          <button>5</button>
-          <button>6</button>
-          <button>1</button>
-          <button>2</button>
-          <button>3</button>
-          <button>0</button>
-          <button>.</button>
-          <button>=</button>
+          <button data-key="103">7</button>
+          <button data-key="104">8</button>
+          <button data-key="105">9</button>
+          <button data-key="100">4</button>
+          <button data-key="101">5</button>
+          <button data-key="102">6</button>
+          <button data-key="97">1</button>
+          <button data-key="98">2</button>
+          <button data-key="99">3</button>
+          <button data-key="96">0</button>
+          <button data-key="110">.</button>
+          <button data-key="13">=</button>
         </div>
         <div class="operation-signs">
-          <button>+</button>
-          <button>-</button>
-          <button>x</button>
-          <button>/</button>
-          <button>+</button>
+          <button data-key="8"><i class="fa-solid fa-delete-left"></i></button>
+          <button data-key="109">-</button>
+          <button data-key="106">x</button>
+          <button data-key="109">/</button>
+          <button data-key="107">+</button>
         </div>
       </div>
     </div>
