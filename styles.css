@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;500&display=swap');
+
+* {
+  font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: wheat;
+}
+.container {
+  max-width: 450px;
+  display: flex;
+  align-items: center;
+  align-self: center;
+  flex-direction: column;
+  border: 4px solid rgb(0, 126, 128);
+}
+.input-display {
+  border-bottom: 5px solid hsla(0 0% 93%);
+}
+input[type='number'] {
+  height: 65px;
+  border: none;
+  outline: none;
+  text-align: end;
+  caret-color: transparent;
+  font-size: 2.5em;
+}
+.display {
+  height: 45px;
+
+  background: white;
+}
+
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.keys {
+  display: flex;
+  gap: 10px;
+}
+.number-keys {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+
+.operation-signs {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.number-keys button,
+.operation-signs button {
+  padding: 1em 1.7em;
+  font-size: 1.5rem;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+}
