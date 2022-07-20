@@ -9,40 +9,53 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
     <link rel="stylesheet" href="styles.css" />
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/all.min.js"
-      defer
-    ></script>
-    <script src="main.js" defer></script>
+    <script src="main.js" defer>
+      window.FontAwesomeConfig = { autoReplaceSvg: false }
+    </script>
+
     <title>Calculator</title>
   </head>
   <body>
     <div class="container">
       <div class="input-display">
-        <input type="number" />
-        <div class="display"></div>
+        <!-- <input type="number" /> -->
+        <div class="show-result"></div>
+        <div class="show-input"></div>
       </div>
       <div class="keys">
         <div class="number-keys">
-          <button data-key="103">7</button>
-          <button data-key="104">8</button>
-          <button data-key="105">9</button>
-          <button data-key="100">4</button>
-          <button data-key="101">5</button>
-          <button data-key="102">6</button>
-          <button data-key="97">1</button>
-          <button data-key="98">2</button>
-          <button data-key="99">3</button>
-          <button data-key="96">0</button>
-          <button data-key="110">.</button>
-          <button data-key="13">=</button>
+          <button data-operation="clear">AC</button>
+          <button data-key="104">x<sup>y</sup></button>
+          <button data-key="53" value="%">%</button>
+          <button data-number>7</button>
+          <button data-number>8</button>
+          <button data-number>9</button>
+          <button data-number>4</button>
+          <button data-number>5</button>
+          <button data-number>6</button>
+          <button data-number>1</button>
+          <button data-number>2</button>
+          <button data-number>3</button>
+          <button data-number>0</button>
+          <button data-decimal>.</button>
+          <button data-equals>=</button>
         </div>
         <div class="operation-signs">
-          <button data-key="8"><i class="fa-solid fa-delete-left"></i></button>
-          <button data-key="109">-</button>
-          <button data-key="106">x</button>
-          <button data-key="109">/</button>
-          <button data-key="107">+</button>
+          <button data-operation="delete">
+            <i class="fa-solid fa-delete-left"></i>
+          </button>
+          <button class="operation" data-operation="divide">
+            <i class="fa-solid fa-divide"></i>
+          </button>
+          <button class="operation" data-operation="multiply">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+          <button class="operation" data-operation="subtract">
+            <i class="fa-solid fa-minus"></i>
+          </button>
+          <button class="operation" data-operation="add">
+            <i class="fa-solid fa-plus"></i>
+          </button>
         </div>
       </div>
     </div>

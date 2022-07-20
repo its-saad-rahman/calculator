@@ -33,10 +33,16 @@ input[type='number'] {
   font-size: 2.6em;
   padding: 0.5em;
 }
-.display {
+.show-result,
+.show-input {
   height: 45px;
-
+  width: 520px;
   background: white;
+  text-align: end;
+  padding: 0.5em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
 }
 
 input[type='number']::-webkit-inner-spin-button,
@@ -71,10 +77,20 @@ input[type='number']::-webkit-outer-spin-button {
 }
 .operation-signs button {
   background: hsl(128deg 3% 40%);
+  font-size: 20px;
+  color: white;
 }
 button[data-key='13'] {
   background: hsl(152deg 60% 70%);
 }
-button[data-key='8'] {
+/* button[data-key='8'],
+button[data-key='109'],
+button[data-key='111'],
+button[data-key='107'],
+button[data-key='109'] {
   font-size: 20px;
+} */
+
+.flex {
+  display: flex;
 }
