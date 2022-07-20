@@ -1,3 +1,4 @@
+//Global Variables
 const numberButtons = document.querySelectorAll('[data-number]');
 const operationButtons = document.querySelectorAll('[data-operation]');
 const deleteButton = document.querySelector('[data-delete]');
@@ -11,11 +12,15 @@ let prev = '';
 let curr = '';
 let operation = undefined;
 
+//Calcuate
 function calculate() {
   let calculation;
+  //parsing perv and curr value
   const previous = parseFloat(prev);
   const current = parseFloat(curr);
+  //check for number in prev and curr
   if (isNaN(previous) || isNaN(current)) return;
+  //making operation based selection
   switch (operation) {
     case 'add':
       calculation = previous + current;
@@ -53,6 +58,7 @@ function appendNumber(number) {
   curr = curr.toString() + number.toString();
 }
 function chooseOperation(sign) {
+  //check if current value is empty than stop the function
   if (curr === '') return;
   if (prev !== '') {
     calculate();
@@ -60,8 +66,39 @@ function chooseOperation(sign) {
   operation = sign;
   prev = curr;
   curr = '';
-  console.log(curr);
 }
+function computePercentage() {
+  if (curr === '' || prev === '') return;
+  let percentage;
+  if (operation !== 'multiply') {
+    return;
+  } else {
+    const previous = parseFloat(prev);
+    const current = parseFloat(curr);
+    percentage = previous * (current / 100);
+  }
+  curr = percentage.toFixed(2);
+  operation = undefined;
+  prev = '';
+}
+function showOpreator() {
+  switch (operation) {
+    case 'add':
+      return '+';
+    case 'subtract':
+      return '-';
+    case 'multiply':
+      return 'x';
+    case 'divide':
+      return '÷';
+    case 'exponentiation':
+      return '^';
+
+    default:
+      return;
+  }
+}
+
 function updateDisplsy() {
   let convertOperator = showOpreator();
   currentOperand.innerText = curr;
@@ -98,20 +135,7 @@ deleteButton.addEventListener('click', () => {
   remove();
   updateDisplsy();
 });
-
-function showOpreator() {
-  switch (operation) {
-    case 'add':
-      return '+';
-    case 'subtract':
-      return '-';
-    case 'multiply':
-      return 'x';
-    case 'divide':
-      return '÷';
-    case 'exponentiation':
-      return '^';
-    default:
-      return;
-  }
-}
+percentButton.addEventListener('click', () => {
+  computePercentage();
+  updateDisplsy();
+});
