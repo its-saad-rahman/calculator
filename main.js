@@ -5,6 +5,7 @@ const clearButton = document.querySelector('[data-clear]');
 const equalButton = document.querySelector('[data-equals]');
 const currentOperand = document.querySelector('[data-current]');
 const previousOperand = document.querySelector('[data-previous]');
+const percentButton = document.querySelector('[data-percent]');
 
 let prev = '';
 let curr = '';
@@ -27,6 +28,9 @@ function calculate() {
       break;
     case 'divide':
       calculation = previous / current;
+      break;
+    case 'exponentiation':
+      calculation = previous ** current;
       break;
     default:
       return;
@@ -59,8 +63,13 @@ function chooseOperation(sign) {
   console.log(curr);
 }
 function updateDisplsy() {
+  let convertOperator = showOpreator();
   currentOperand.innerText = curr;
-  previousOperand.innerText = prev;
+  if (operation != null) {
+    previousOperand.innerText = `${prev} ${convertOperator}`;
+  } else {
+    previousOperand.innerText = '';
+  }
 }
 
 numberButtons.forEach((button) =>
@@ -89,3 +98,20 @@ deleteButton.addEventListener('click', () => {
   remove();
   updateDisplsy();
 });
+
+function showOpreator() {
+  switch (operation) {
+    case 'add':
+      return '+';
+    case 'subtract':
+      return '-';
+    case 'multiply':
+      return 'x';
+    case 'divide':
+      return '÷';
+    case 'exponentiation':
+      return '^';
+    default:
+      return;
+  }
+}
