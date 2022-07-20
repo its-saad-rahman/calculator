@@ -41,7 +41,9 @@ function clear() {
   curr = '';
   operation = undefined;
 }
-function remove() {}
+function remove() {
+  curr = curr.toString().slice(0, -1);
+}
 function appendNumber(number) {
   if (number === '.' && curr.includes('.')) return;
   curr = curr.toString() + number.toString();
@@ -81,5 +83,9 @@ equalButton.addEventListener('click', () => {
 });
 clearButton.addEventListener('click', () => {
   clear();
+  updateDisplsy();
+});
+deleteButton.addEventListener('click', () => {
+  remove();
   updateDisplsy();
 });
