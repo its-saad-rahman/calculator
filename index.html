@@ -19,12 +19,12 @@
     <div class="container">
       <div class="input-display">
         <!-- <input type="number" /> -->
-        <div class="show-result"></div>
-        <div class="show-input"></div>
+        <div data-previous class="previous"></div>
+        <div data-current class="current"></div>
       </div>
       <div class="keys">
         <div class="number-keys">
-          <button data-operation="clear">AC</button>
+          <button data-clear>AC</button>
           <button data-key="104">x<sup>y</sup></button>
           <button data-key="53" value="%">%</button>
           <button data-number>7</button>
@@ -37,11 +37,11 @@
           <button data-number>2</button>
           <button data-number>3</button>
           <button data-number>0</button>
-          <button data-decimal>.</button>
+          <button data-number>.</button>
           <button data-equals>=</button>
         </div>
         <div class="operation-signs">
-          <button data-operation="delete">
+          <button data-delete>
             <i class="fa-solid fa-delete-left"></i>
           </button>
           <button class="operation" data-operation="divide">
