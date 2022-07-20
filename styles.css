@@ -35,16 +35,23 @@ input[type='number'] {
 }
 .previous,
 .current {
-  height: 45px;
   width: 520px;
   background: white;
   text-align: end;
-  padding: 0.5em;
+
   display: flex;
   align-items: flex-end;
   justify-content: end;
+  font-weight: 900;
 }
-
+.current {
+  font-size: 75px;
+  height: 100px;
+}
+.previous {
+  font-size: 40px;
+  height: 60px;
+}
 input[type='number']::-webkit-inner-spin-button,
 input[type='number']::-webkit-outer-spin-button {
   -webkit-appearance: none;
