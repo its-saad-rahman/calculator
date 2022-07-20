@@ -12,25 +12,28 @@ let operation = undefined;
 
 function calculate() {
   let calculation;
-  const num1 = parseFloat(prev);
-  const num2 = parseFloat(curr);
-  if (isNaN(num1) || isNaN(num2)) return;
+  const previous = parseFloat(prev);
+  const current = parseFloat(curr);
+  if (isNaN(previous) || isNaN(current)) return;
   switch (operation) {
     case 'add':
-      calculation = num1 + num2;
+      calculation = previous + current;
       break;
     case 'subtract':
-      calculation = num1 - num2;
+      calculation = previous - current;
       break;
     case 'multiply':
-      calculation = num1 * num2;
+      calculation = previous * current;
       break;
     case 'divide':
-      calculation = num1 / num2;
+      calculation = previous / current;
       break;
     default:
       return;
   }
+  curr = calculation;
+  operation = undefined;
+  prev = '';
 }
 
 function clear() {
@@ -44,10 +47,10 @@ function appendNumber(number) {
   curr = curr.toString() + number.toString();
 }
 function chooseOperation(sign) {
-  // if (curr === '') return;
-  // if (prev !== '') {
-  //   calculate();
-  // }
+  if (curr === '') return;
+  if (prev !== '') {
+    calculate();
+  }
   operation = sign;
   prev = curr;
   curr = '';
@@ -71,3 +74,12 @@ operationButtons.forEach((button) =>
     updateDisplsy();
   })
 );
+
+equalButton.addEventListener('click', () => {
+  calculate();
+  updateDisplsy();
+});
+clearButton.addEventListener('click', () => {
+  clear();
+  updateDisplsy();
+});
